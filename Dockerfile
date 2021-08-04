@@ -1,4 +1,5 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jre
+
 # add user
 RUN groupadd spring
 RUN useradd spring -g spring -m -s /bin/bash
