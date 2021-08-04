@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: spring-jetty-graceful-shutdown
+    labels:
+        name: spring-jetty-graceful-shutdown
+spec:
+    selector:
+        name: spring-jetty-graceful-shutdown
+    type: ClusterIP
+    ports:
+        - port: 8080
+          name: spring-jetty-graceful-shutdown-http
+          targetPort: 8080

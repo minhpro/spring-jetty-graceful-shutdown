@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: spring-jetty-graceful-shutdown
+    labels:
+        app: spring-jetty-graceful-shutdown
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: spring-jetty-graceful-shutdown
+    template:
+        metadata:
+            labels:
+                app: spring-jetty-graceful-shutdown
+        spec:
+            containers:
+                - name: spring-jetty-graceful-shutdown
+                  image: spring-jetty-graceful-shutdown
+                  ports:
+                      - containerPort: 8080
